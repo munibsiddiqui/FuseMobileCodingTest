@@ -16,11 +16,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Company Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dz-mj-ryJ">
+                                <rect key="frame" x="0.0" y="47" width="600" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lHb-PL-u8C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8mS-UH-Qd5"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBE-aN-5JL">
+                                <rect key="frame" x="250" y="128" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.72549019609999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="VVF-nM-vKn"/>
+                                    <constraint firstAttribute="width" constant="100" id="zqK-eN-nm8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3dz-mj-ryJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7YP-1a-AAP"/>
+                            <constraint firstAttribute="trailing" secondItem="3dz-mj-ryJ" secondAttribute="trailing" id="Erc-5V-f9h"/>
+                            <constraint firstItem="pBE-aN-5JL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xxb-Ej-gYk"/>
+                            <constraint firstItem="3dz-mj-ryJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dvf-lB-Jcj"/>
+                            <constraint firstItem="3dz-mj-ryJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="iSf-4Z-Lj0"/>
+                            <constraint firstItem="3dz-mj-ryJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-228" id="mHL-R4-BaU"/>
+                            <constraint firstItem="pBE-aN-5JL" firstAttribute="top" secondItem="3dz-mj-ryJ" secondAttribute="bottom" constant="31" id="v6c-tk-beS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mHL-R4-BaU"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imgViewCompany" destination="pBE-aN-5JL" id="kZD-vS-QsK"/>
+                        <outlet property="txtFieldCompanyName" destination="3dz-mj-ryJ" id="qKq-89-axf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="272" y="313"/>
         </scene>
     </scenes>
 </document>
