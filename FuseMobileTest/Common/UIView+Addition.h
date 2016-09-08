@@ -10,9 +10,6 @@
 
 @interface UIView (Addition)
 
-- (void)setBorderForColor:(UIColor *)color
-                    width:(float)width
-                   radius:(float)radius;
 
 - (void) setRedBorderColor;
 - (void) setGreenBorderColor;

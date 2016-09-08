@@ -92,6 +92,8 @@
 
 #pragma mark - Http Client Request
 
+
+// Method Request call for Company Information
 - (void) requestForCompanyInformation {
     
     NSString *companyName = [NSString stringWithFormat:kAPIEndpointCompany,[self.txtFieldCompanyName.text stringByStrippingWhitespace]];
@@ -117,9 +119,11 @@
 }
 
 
+// Request for Downloading Logo Image of Company.
 - (void) requestForDownloadCompanyImage :(NSString *) companyImageURL {
     
     NSString *cachesPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    
     NSURL *fileUrl = [NSURL fileURLWithPath:cachesPath];
    
     _downloadTask = [HttpClient downloadWithURL:companyImageURL savePathURL:fileUrl progress:^(float progress) {
@@ -132,11 +136,13 @@
         
         NSString *imgFilePath = [filePath path];
         UIImage *img = [UIImage imageWithContentsOfFile:imgFilePath];
-        self.imgViewCompany.image = img;
+        self.imgViewCompany.image  = img;
+        self.imgViewCompany.hidden = NO;
         
     } fail:^(NSError *error) {
         
         NSLog(@"%@",error);
+        
     }];
 
     [_downloadTask resume];
@@ -149,6 +155,8 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     
     [textField setNormalBorderColor];
+    [self.imgViewCompany setHidden:YES];
+
     
     return YES;
 }

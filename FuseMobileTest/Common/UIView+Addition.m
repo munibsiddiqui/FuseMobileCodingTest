@@ -10,27 +10,17 @@
 
 @implementation UIView (Addition)
 
-- (void)setBorderForColor:(UIColor *)color
-                    width:(float)width
-                   radius:(float)radius
-{
-    self.layer.cornerRadius = radius;
-    self.layer.masksToBounds = YES;
-    self.layer.borderColor = [color CGColor];
-    self.layer.borderWidth = width;
-}
-
 // set textfield border color to red on failure
 - (void) setRedBorderColor {
     
-    [self setBorderForColor:[UIColor redColor] width:1 radius:0];
+    [self setBackgroundColor:[UIColor redColor]];
     
 }
 
 // set textfield border color to green on success
 - (void) setGreenBorderColor {
     
-    [self setBorderForColor:[UIColor greenColor] width:1 radius:0];
+    [self setBackgroundColor:[UIColor greenColor]];
     
 }
 
@@ -38,7 +28,7 @@
 
 - (void) setNormalBorderColor {
     
-    [self setBorderForColor:[UIColor blackColor] width:1 radius:0];
+    [self setBackgroundColor:[UIColor whiteColor]];
 
 }
 
